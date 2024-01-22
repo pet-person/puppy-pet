@@ -14,9 +14,9 @@ public class Item extends BaseTimeEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int item_key;
+    private long item_key;
 
-    private int item_nm;
+    private String item_nm;
 
     private int item_price;
 
@@ -26,7 +26,7 @@ public class Item extends BaseTimeEntity {
 
     private String description;
 
-    private String view_count;
+    private int view_count;
 
     private ColorENUM item_color_type;
 

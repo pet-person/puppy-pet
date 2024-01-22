@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+    <form action="/reivew/new" role="form" method="post"  th:object="${reviewDTO}">
+        <div>
+            <label th:for="score">평점</label>
+            <input type="score" th:field="*{score}" class="form-control" placeholder="상품의 평점을 입력해주세요">
+            <p th:if="${#fields.hasErrors('score')}" th:errors="*{score}" class="fieldError">Incorrect data</p>
+            <ul class="rating">
+                <li class="fa fa-star"></li>
+                <li class="fa fa-star"></li>
+                <li class="fa fa-star"></li>
+                <li class="fa fa-star disable"></li>
+                <li class="fa fa-star disable"></li>
+            </ul>
+        </div>
+        <div>
+            <label th:for="content">상품평</label>
+            <input type="content" th:field="*{content}" class="form-control" placeholder="상품평을 입력해주세요">
+            <p th:if="${#fields.hasErrors('content')}" th:errors="*{content}" class="fieldError">Incorrect data</p>
+        </div>
+    </form>
+
+</body>
+</html>
